@@ -51,9 +51,13 @@ JOptionPane.showMessageDialog(null, txt, "Gerente", JOptionPane.INFORMATION_MESS
 
     @Override
     public double calcularSalario() {
-        return salarioBase + (salarioBase + porcentaje);
+        return salarioBase + (salarioBase * porcentaje);
     
     
 }
+    public String getPosicion() {
+    return posicion;
+}
+
     
 }
