@@ -40,7 +40,7 @@ public class InterfazPlanilla extends JFrame {
         txtApellido2 = new JTextField();
         txtDatoExtra = new JTextField();
 
-        comboTipo = new JComboBox<>(new String[]{"Gerente", "Horas"});
+        comboTipo = new JComboBox<>(new String[]{"Gerente", "Horas", "Comision"});
         comboTipo.addActionListener(e -> actualizarEtiquetaDato());
 
         panel.add(new JLabel("Cédula:"));
@@ -51,7 +51,7 @@ public class InterfazPlanilla extends JFrame {
         panel.add(txtApellido1);
         panel.add(new JLabel("Apellido 2:"));
         panel.add(txtApellido2);
-        panel.add(new JLabel("Dato extra (Posición o Horas):"));
+        panel.add(new JLabel("Dato extra (Posición, Horas o ventas):"));
         panel.add(txtDatoExtra);
         panel.add(new JLabel("Tipo de colaborador:"));
         panel.add(comboTipo);
@@ -63,9 +63,12 @@ public class InterfazPlanilla extends JFrame {
         String tipo = (String) comboTipo.getSelectedItem();
         if (tipo.equals("Gerente")) {
             txtDatoExtra.setToolTipText("Posición: A, B o C");
-        } else {
+        } else if (tipo.equals("Horas")) {
             txtDatoExtra.setToolTipText("Cantidad de horas trabajadas");
+        } else {
+            txtDatoExtra.setToolTipText("Cantidad de ventas");
         }
+        
     }
 
     private void crearTabla() {
@@ -115,6 +118,10 @@ public class InterfazPlanilla extends JFrame {
             } else if (tipo.equals("Horas")) {
                 int horas = Integer.parseInt(extra);
                 col = new colaboradorHoras(horas, nombre, ap1, ap2, cedula);
+            }
+            else if (tipo.equals("Comision")) {
+                int ventas = Integer.parseInt(extra);
+                col = new ColaboradorBaseComision(cedula, nombre, ap1, ap2, ventas);
             }
 
             if (col != null) {

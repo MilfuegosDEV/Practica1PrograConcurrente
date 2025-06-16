@@ -70,6 +70,10 @@ public static ArrayList<Colaborador> cargar(String ruta) {
                 int horas = Integer.parseInt(datos[5]);
                 lista.add(new colaboradorHoras(horas, nombre, ap1, ap2, cedula));
             }
+            else if (tipo.equals("Comision")) {
+                int ventas = Integer.parseInt(datos[5]);
+                lista.add(new ColaboradorBaseComision(cedula, nombre, ap1, ap2, ventas));
+            }
         }
     } catch (IOException e) {
         System.err.println("Error al leer: " + e.getMessage());

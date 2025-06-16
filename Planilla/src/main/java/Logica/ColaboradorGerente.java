@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author toon_
+ * @author Daniel Luna Cienfuegos
  */
 public class ColaboradorGerente extends Colaborador{
     

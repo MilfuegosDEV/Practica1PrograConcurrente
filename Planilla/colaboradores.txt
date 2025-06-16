@@ -3,3 +3,4 @@ HORAS,305550821,Juan,Luna,Cienfuegos,8
 GERENTE,12131,jose,Rodriguez,Segura,OPERACIONES
 GERENTE,212,asfddsa,dsfafd,adfa,123
 GERENTE,302304,ẁlkjkfa,asdfasf,asdfsadf,A
+
